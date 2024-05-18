@@ -17,10 +17,10 @@ with app.app_context():
     # Create an empty list
     pets = []
 
-    species = ['Dog', 'Cat', 'Chicken', 'Hamster', 'Turtle']
+    species = ['Dog', 'Cat', 'Chicken', 'Hamster', 'Turtle', 'Hippo', 'Lion']
 
     # Add some Pet instances to the list
-    for n in range(10):
+    for n in range(20):
         pet = Pet(name=fake.first_name(), species=rc(species))
         pets.append(pet)
 
@@ -29,3 +29,6 @@ with app.app_context():
 
     # Commit the transaction
     db.session.commit()
+
+    # confirm the seed did its job!
+    print("Semi-random animals created, named and seeded!!")
